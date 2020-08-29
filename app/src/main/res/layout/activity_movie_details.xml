@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9c9c9c"
+    tools:context=".MovieDetails">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_img"
+        android:layout_width="match_parent"
+        android:layout_height="227dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FFF"
+        android:transitionName="the_transition1" />
+
+    <RelativeLayout
+        android:id="@+id/seat_selection"
+        android:layout_width="330dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:background="#FFF" >
+
+        <GridView
+            android:id="@+id/grid_view"
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            android:layout_centerInParent="true"
+            android:horizontalSpacing="2dp"
+            android:numColumns="6"
+            android:paddingHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/pay_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose your seats"
+            android:layout_below="@id/grid_view"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/date_select"
+        android:layout_gravity="center"
+        android:layout_width="330dp"
+        android:layout_height="match_parent"
+        android:background="#FFF" >
+
+        <TextView
+            android:id="@+id/date_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:layout_margin="16dp"
+            android:textColor="#000"
+            android:text="Date:" />
+
+        <TextView
+            android:id="@+id/date_date"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:textSize="60sp"
+            android:textColor="#000"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date_title"
+            android:text="29" />
+
+        <TextView
+            android:id="@+id/date_month"
+            android:layout_toEndOf="@id/date_date"
+            android:layout_below="@id/date_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="46sp"
+            android:textColor="#000"
+            android:text="August" />
+
+        <ImageView
+            android:id="@+id/date_edit"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_edit"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="30dp" />
+
+        <TextView
+            android:id="@+id/time_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time:"
+            android:textColor="#000"
+            android:textSize="28sp"
+            android:layout_below="@id/date_date"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/time_rview"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@id/time_title"
+            android:layout_margin="16dp" />
+
+        <Button
+            android:id="@+id/make_payment_after_timedate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time_rview"
+            android:layout_centerHorizontal="true"
+            android:text="Book seats" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/about_movie"
+        android:layout_marginTop="16dp"
+        android:background="#FFFFFF"
+        android:layout_width="300dp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:backgroundTint="#FFF"
+        android:padding="16dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Thor: Ragnarok"
+            android:textColor="#000"
+            android:textSize="20.4sp"
+            android:transitionName="the_transition2" />
+
+        <Button
+            android:id="@+id/btn_book"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_below="@id/view_title"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:text="Book tickets"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_marginEnd="8dp"
+            android:id="@+id/view_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4.25dp"
+            android:text="IMDB 9.4"
+            android:textSize="16sp"
+            android:transitionName="the_transition3"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/view_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_book"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/ragnarok"
+            android:textColor="#000"
+            android:textSize="12sp"
+            android:transitionName="the_transition4" />
+
+    </RelativeLayout>
+
+</LinearLayout>
